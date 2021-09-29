@@ -3,13 +3,14 @@ const resourceToPrecache = [
     '/',
     'index.html',
     '1.jpg',
+    '2.jpg',
 ]
 
 self.addEventListener('install', event => {
     console.log('Installed')
     event.waitUntil(
         caches.open(cacheName)
-        .then(cache=> cache.addAll(resourceToPrecache)
+            .then(cache=> cache.addAll(resourceToPrecache)
         )
     )
 })
