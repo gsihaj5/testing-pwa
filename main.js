@@ -1,0 +1,1 @@
+if(!navigator.serviceWorker) return;
