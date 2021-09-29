@@ -5,5 +5,10 @@ if('serviceWorker' in navigator){
         .then(reg=>console.log("registered"))
         .catch(err => console.log("error :( -> ", err))
     })
-
 }
+
+let installPrompt;
+window.addEventListener('beforeinstallprompt', (event)=> {
+    event.preventDefault()
+    installPrompt = event;
+})
