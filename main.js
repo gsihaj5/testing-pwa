@@ -7,22 +7,5 @@ if('serviceWorker' in navigator){
     })
 }
 
-let installPrompt;
-window.addEventListener('beforeinstallprompt', (event)=> {
-    event.preventDefault()
-    installPrompt = event;
-    installPrompt.prompt();
-    installPrompt.userChoice.then(
-        (choiceResult) => {
-            if(choiceResult.outcome === 'accepted'){
 
-                console.log("accepted")
-
-            }
-            installPrompt = null
-
-        }
-
-    )
-})
 

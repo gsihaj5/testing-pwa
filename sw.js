@@ -7,15 +7,6 @@ const resourceToPrecache = [
     '3.jpg',
 ]
 
-self.addEventListener('install', event => {
-    console.log('Installed')
-    event.waitUntil(
-        caches.open(cacheName)
-            .then(cache=> cache.addAll(resourceToPrecache)
-        )
-    )
-})
-
 self.addEventListener('fetch', event =>{
     console.log("fetching")
     event.respondWith(caches.match(event.request)
